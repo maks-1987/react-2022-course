@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import About from './components/About';
 import AddItem from './components/AddItem';
@@ -9,36 +9,35 @@ import Home from './components/Home';
 import SearchItem from './components/SearchItem';
 
 function App() {
-  const [items, setItems] = useState(JSON.parse(localStorage.getItem('listItems')!));
+  const [items, setItems] = useState(JSON.parse(localStorage.getItem('listItems')!) || []);
   const [newItem, setNewItem] = useState('');
   const [search, setSearch] = useState('');
 
-  const setAndSaveItems = (newItems: items[]) => {
-    setItems(newItems);
-    localStorage.setItem('listItems', JSON.stringify(newItems));
-  };
+  useEffect(() => {
+    localStorage.setItem('listItems', JSON.stringify(items));
+  }, [items]);
 
   const addItem = (item: string) => {
     const id = items.length ? items[items.length - 1].id + 1 : 1;
     const myNewItem = { id: id, checked: false, item: item };
     const listItems = [...items, myNewItem];
-    setAndSaveItems(listItems);
+    setItems(listItems);
   };
 
   const handleCheck = (id: number) => {
     const listItems = items.map((el: items) => (el.id === id ? { ...el, checked: !el.checked } : el));
-    setAndSaveItems(listItems);
+    setItems(listItems);
   };
 
   const handleDelete = (id: number) => {
     const listItems = items.filter((el: items) => el.id !== id);
-    setAndSaveItems(listItems);
+    setItems(listItems);
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!newItem) return;
-    console.log(newItem.length)
+    console.log(newItem.length);
     addItem(newItem);
     setNewItem('');
   };
@@ -53,7 +52,7 @@ function App() {
       <AddItem newItem={newItem} setNewItem={setNewItem} handleSubmit={handleSubmit} />
       <SearchItem search={search} setSearch={setSearch} />
       <Content
-        items={items.filter((el: items) => ((el.item).toLowerCase()).includes(search.toLowerCase()))}
+        items={items.filter((el: items) => el.item.toLowerCase().includes(search.toLowerCase()))}
         handleCheck={handleCheck}
         handleDelete={handleDelete}
       />
