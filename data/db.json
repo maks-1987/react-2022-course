@@ -1,0 +1,19 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "checked": true,
+      "item": "delectus aut autem"
+    },
+    {
+      "id": 4,
+      "checked": false,
+      "item": "et porro tempora"
+    },
+    {
+      "id": 6,
+      "checked": false,
+      "item": "eeee"
+    }
+  ]
+}
