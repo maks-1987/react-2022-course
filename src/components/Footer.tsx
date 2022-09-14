@@ -6,7 +6,13 @@ export default function Footer({ length }: { length: number }) {
   return (
     <footer style={{ margin: '2rem' }}>
       <p>Copyright &copy; {today.getFullYear()}</p>
-      <p>{length === 1 ? 'Item' : 'Items'} in list: {length}</p>
+      <p>
+        {length === 1 ? 'Item' : 'Items'} in list: {length}
+      </p>
     </footer>
   );
 }
+
+Footer.defaultProps = {
+  length: 0,
+};
