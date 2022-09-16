@@ -1,14 +1,16 @@
-import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Footer from './Footer';
 import Header from './Header';
 
-type Props = {};
+type Props = {
+  search: string;
+  setSearch: Function;
+};
 
-export default function Layout({}: Props) {
+export default function Layout({ search, setSearch }: Props) {
   return (
     <>
-      <Header />
+      <Header title={'React-TypeScript blog'} search={search} setSearch={setSearch} />
       <Outlet />
       <Footer />
     </>

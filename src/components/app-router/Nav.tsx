@@ -1,11 +1,25 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
-type Props = {};
+type Props = {
+  search: string;
+  setSearch: Function;
+};
 
-export default function Nav({}: Props) {
+export default function Nav({ search, setSearch }: Props) {
+
   return (
-    <nav>
+    <nav className="nav">
+      <form className="searchForm" onSubmit={(e) => e.preventDefault()}>
+        <label htmlFor="search">Serch post</label>
+        <input
+          type="text"
+          className="search"
+          id="search"
+          placeholder="Search posts..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+      </form>
       <ul>
         <li>
           <Link to="/">Home</Link>
@@ -16,9 +30,6 @@ export default function Nav({}: Props) {
         <li>
           <Link to="/about">About</Link>
         </li>
-        {/* <li>
-          <Link to="/missing">Missing</Link>
-        </li> */}
       </ul>
     </nav>
   );

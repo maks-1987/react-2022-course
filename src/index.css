@@ -27,6 +27,8 @@ code {
   display: flex;
   height: 100vh;
   flex-direction: column;
+  max-width: 720px;
+  margin: 0 auto;
 }
 
 .home,
@@ -35,4 +37,125 @@ code {
 .about,
 .missing {
   flex: 1 0 auto;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.container {
+  padding: 10px 15px;
+}
+
+.header,
+.footer {
+  background-color: #ffad04;
+  text-align: left;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0px 0px;
+  background-color: #a4b6ff;
+}
+
+.searchForm {
+  padding: 8px 15px 6px;
+  flex: 1 1;
+  line-height: 2rem;
+  font-size: 0px;
+}
+
+.search {
+  padding: 1px 8px;
+  width: 100%;
+  border: 2px solid #643000;
+  border-radius: 6px;
+  line-height: inherit;
+  font-size: 18px;
+}
+
+.nav label {
+  position: absolute;
+  left: -100%;
+}
+
+.nav ul {
+  display: flex;
+  align-items: center;
+}
+
+.nav ul li:not(last-child) {
+  margin-right: 20px;
+}
+
+.nav ul li {
+  list-style: none;
+  line-height: 2rem;
+}
+
+.nav li a {
+  text-decoration: none;
+}
+
+.nav li a:focus {
+  color: #ffffff;
+}
+
+.post {
+  text-align: left;
+}
+
+.post h3 {
+  font-size: 22px;
+}
+
+.post a {
+  text-decoration: none;
+  color: #643000;
+}
+
+.post a:hover {
+  color: #a4b6ff;
+}
+
+.postDate {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.newPostForm input,
+.newPostForm textarea,
+.newPostForm button {
+  width: 90%;
+  padding: 4px 8px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  border: 2px solid #a4b6ff;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.newPostForm label {
+  display: block;
+  width: 90%;
+  text-align: left;
+  margin: 0 auto;
+  font-size: 14px;
+}
+
+.newPostForm button {
+  background-color: #a4b6ff;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.newPostForm button:hover {
+  border-color: #643000;
+  color: #643000;
+  background-color: #ffad04;
 }

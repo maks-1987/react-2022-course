@@ -1,14 +1,18 @@
-import React from 'react';
 import Nav from './Nav';
 
-type Props = {};
+type Props = {
+  title: string;
+  search: string;
+  setSearch: Function;
+};
 
-export default function Header({}: Props) {
+export default function Header({ title, search, setSearch }: Props) {
+
   return (
     <>
       <header className="header">
-        Header
-        <Nav />
+        <h2 className="container">{title}</h2>
+        <Nav search={search} setSearch={setSearch} />
       </header>
     </>
   );
