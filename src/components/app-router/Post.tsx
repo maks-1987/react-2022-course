@@ -12,9 +12,10 @@ export default function Post({ post }: Props) {
     <article className="post">
       <Link to={`/post/${post.id}`}>
         <h3>{post.title}</h3>
-        <p className="postDate">{post.datetime}</p>
+        {/*<p className="postDate">{post.datetime}</p>*/}
+        <p className="postDate">User ID: {post.userId}</p>
       </Link>
-      <p className="postBody">{post.body.length <= 25 ? post.body : `${post.body.slice(25)}...`}</p>
+      <p className="postBody">{post.body.length <= 35 ? post.body : `${post.body.slice(0, 25)}...`}</p>
       <hr style={{ margin: '15px 0px 20px 0px' }} />
     </article>
   );

@@ -1,19 +1,27 @@
 {
-  "items": [
+  "posts": [
     {
       "id": 1,
-      "checked": true,
-      "item": "delectus aut autem"
+      "title": "First post",
+      "datetime": "September 18, 2022 7:18:12 PM",
+      "body": "Lorem fsdf sd fds fds fsd "
     },
     {
-      "id": 4,
-      "checked": false,
-      "item": "et porro tempora"
+      "id": 2,
+      "title": "Second post",
+      "datetime": "September 18, 2022 7:19:31 PM",
+      "body": "second post..."
     },
     {
-      "id": 6,
-      "checked": false,
-      "item": "eeee"
+      "id": 3,
+      "title": "Third",
+      "datetime": "September 18, 2022 7:20:05 PM",
+      "body": "Third re  gdfdfg g g dfgfdg  ncvcbcvb bcvcf www ewr wr fg df g"
+    },
+    {
+      "id": 101,
+      "title": "new ",
+      "body": "newweweq eqw e"
     }
   ]
 }
