@@ -60,7 +60,7 @@ function App() {
       title: editPostTitle,
       // datetime,
       body: editPostBody,
-      userId: posts[id].userId,
+      // userId: posts[id].userId,
     };
     try {
       const response = await api.put(`/posts/${id}`, updatedPost);
